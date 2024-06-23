@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: custom-annotation-processor
+
+random:
+  generator:
+    email:
+      domains: mail, yandex, digit, google, amazon
+      countryCodes: ru, com, net, biz, bz, li

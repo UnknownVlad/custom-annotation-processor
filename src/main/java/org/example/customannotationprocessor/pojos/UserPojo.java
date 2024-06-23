@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.customannotationprocessor.components.annotations.randomizers.RandomInteger;
+import org.example.customannotationprocessor.components.annotations.randomizers.RandomStringPattern;
 import org.example.customannotationprocessor.components.annotations.randomizers.Randomizer;
+import org.example.customannotationprocessor.components.enums.PatternType;
 import org.example.customannotationprocessor.components.impl.RandomStringGenerator;
 
 @Getter
@@ -13,12 +15,13 @@ import org.example.customannotationprocessor.components.impl.RandomStringGenerat
 @Data
 @NoArgsConstructor
 public class UserPojo {
-    @Randomizer(generator = RandomStringGenerator.class)
-    String name;
-
+    @RandomStringPattern(target = PatternType.PHONE_NUMBER)
+    String phoneNumber;
     @RandomInteger(max = 30, min = 18)
     Integer age;
+    @RandomStringPattern(target = PatternType.ID)
+    String id;
 
-    @Randomizer(generator = RandomStringGenerator.class)
+    @RandomStringPattern(target = PatternType.EMAIL)
     String email;
 }
