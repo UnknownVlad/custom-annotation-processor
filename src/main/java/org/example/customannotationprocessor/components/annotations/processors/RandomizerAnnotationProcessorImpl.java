@@ -57,9 +57,6 @@ public class RandomizerAnnotationProcessorImpl implements RandomizerAnnotationPr
                     "-" +
                     (new Random().nextInt(89) + 10);
         } else if (patternType.equals(PatternType.EMAIL)) {
-            System.out.println("++++++++++++++++++");
-            System.out.println(emailGeneratorConstants.countryCodes());
-            System.out.println(emailGeneratorConstants.domains());
             return "generated.email@" +
                     emailGeneratorConstants.domains()[
                             new Random().nextInt(emailGeneratorConstants.domains().length)] +
